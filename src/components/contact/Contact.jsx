@@ -10,8 +10,8 @@ export default function Contact({ contact }) {
   const handleDelete = () => dispatch(deleteContact(contact.id));
 
   return (
-    <div className={styles.box}>
-      <div>
+    <>
+      <div className={styles.box}>
         <p className={styles.name}>
           <IoPerson className={styles.icon} />
           {contact.name}
@@ -24,6 +24,6 @@ export default function Contact({ contact }) {
       <button className={styles.btn} onClick={handleDelete}>
         Delete
       </button>
-    </div>
+    </>
   );
 }
