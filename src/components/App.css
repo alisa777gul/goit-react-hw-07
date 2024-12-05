@@ -4,16 +4,17 @@ body {
 }
 
 #root {
-  padding: 1rem;
+  padding-top: 1rem;
   text-align: left;
   margin: 0 auto;
   max-width: 1280px;
 }
 
 .container {
-  padding: 32px;
+  padding: 16px;
   min-width: 320px;
   width: 320px;
+  margin: 0 auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 

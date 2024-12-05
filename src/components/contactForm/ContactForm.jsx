@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
 import style from './ContactForm.module.css';
 import { nanoid } from 'nanoid/non-secure';
-import { addContact } from '../../redux/contactsSlice';
+import { addContact } from '../../redux/contactsOps';
 
 export default function ContactForm() {
   const dispatch = useDispatch();
@@ -26,12 +26,12 @@ export default function ContactForm() {
       .max(50, 'Too Long!')
       .required('Required'),
     number: Yup.string()
-      .min(9, 'Too Short!')
-      .max(10, 'Too Long!')
+      .min(12, 'Too Short!')
+      .max(13, 'Too Long!')
       .required('Required')
       .matches(
-        /^\d{3}-\d{2}-\d{2}$|^\d{3} \d{2} \d{2}$/,
-        'Phone number must be in the format XXX-XX-XX or XXX XX XX'
+        /^\d{3}-\d{3}-\d{4}$|^\d{3} \d{3} \d{4}$/,
+        'Phone number must be in the format XXX-XXX-XXXX or XXX XXX XXXX'
       ),
   });
 
@@ -68,7 +68,7 @@ export default function ContactForm() {
             type="tel"
             name="number"
             id={numberFieldId}
-            placeholder="999-99-99 or 999 99 99"
+            placeholder="999-999-9999 or 999 999 9999"
           />
           <ErrorMessage
             className={style.error}
